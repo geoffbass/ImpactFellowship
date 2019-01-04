@@ -33,7 +33,8 @@ app.get('/', (req, res) => {
 
 //param called id is accessible req.params.id
 
-
+// /products
+// /products?prime=true
 app.listen(3000);
 
 // const http = require('http');
