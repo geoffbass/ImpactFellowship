@@ -1,11 +1,24 @@
 //This code is going to be responsible for the exection of my other code.
-const { someThing, x, y } = require('./utils')
-const { readFile } = require('fs');
+// const { someThing, x, y } = require('./utils')
 
-readFile('./stuff.txt', 'utf8', (err, data) => {
+const { readFile } = require('fs');
+const { convertToInitials } = require('./utils');
+const { yellow } = require('chalk');
+
+// console.log(convertToInitials('Hello There'));
+// readFile('./stuff.txt', 'utf8', (err, data) => {
+//     if(err) console.log('ERROR', err);
+//     else {
+//         console.log(typeof data);    
+//     }
+// })
+
+readFile('./phrases.txt', 'utf8', (err, data) => {
     if(err) console.log('ERROR', err);
     else {
-        console.log(typeof data);    
+        const arrOfInitials = data.split('\n').map(convertToInitials)
+        console.log(yellow(arrOfInitials));
+        //Only place I can be sure I read my phrases.txt  
     }
 })
 
@@ -19,8 +32,3 @@ Wow This Is Cool
 
 ['HT', 'TAF', 'WTIC']
 */
-
-
-// const someThing = utils.someThing
-// const { someThing, x, y } = utils
-console.log(someThing);
