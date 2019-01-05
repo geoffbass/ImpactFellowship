@@ -11,5 +11,10 @@ module.exports = [
         // id: 3,
        name: 'Tiny',
         age: 1
+    },
+    {
+        // id: 4,
+       name: 'Charlotte',
+        age: 4
     }
 ]
