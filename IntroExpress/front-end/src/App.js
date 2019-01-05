@@ -67,7 +67,14 @@ class NewPuppyForm extends Component {
     submitEvent.preventDefault();
     const response = await axios.post('/puppies', this.state);
     const puppies = response.data;
-    this.props.addPuppy(puppies);
+    // this.props.addPuppy(puppies);
+    this.setState({
+      puppies: puppies
+    })
+    this.setState({
+      name: '',
+      age: ''
+    })
   }
 
   render() {
@@ -76,10 +83,10 @@ class NewPuppyForm extends Component {
         <h2>Add a new puppy!</h2>
         <form onSubmit={this.handleSubmit}>
           <label>Name:</label>
-          <input onChange={this.handleNameChange} type="text" name="name" />
+          <input value={this.state.name} onChange={this.handleNameChange} type="text" name="name" />
           <br/>
           <label>Age:</label>
-          <input onChange={this.handleAgeChange} type="text" name="age" />
+          <input value={this.state.age} onChange={this.handleAgeChange} type="text" name="age" />
           <br/>
           <button type="submit">Add Puppy</button>
         </form>
