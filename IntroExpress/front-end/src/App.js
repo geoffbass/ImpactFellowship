@@ -26,7 +26,7 @@ class App extends Component {
         <h1>Hello Impact Fellowship</h1>
         <h3>Puppies will go here:</h3>
         {
-          this.state.puppies.map(puppy => <p>{puppy.name}</p>)
+          this.state.puppies.map(puppy => <p>{puppy.name}, {puppy.age} year{puppy.age > 1 ? 's' : null} old</p>)
         }
       </div>
     );
